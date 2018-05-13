@@ -11,16 +11,20 @@ export default class Banner extends React.PureComponent{
 
     _renderPage(image, index,length) {
         return (
-            <ImageBackground  
+            <TouchableHighlight
                 key={index}
+                style={{flex:1,backgroundColor:'#FFF'}}
+                onPress={()=>this.props.onMessageCallback(image)}>
+                <ImageBackground  
                 resizeMode='stretch'
                 source={{uri:image.imagePath}}
                 style={{flex:1,justifyContent: 'flex-end',margin:10}}>
-                <View style={{flexDirection:'row',backgroundColor:Colors.drawer,padding:8}}>
-                    <Text style={{flex:1,color:Colors.white_fff}}>{image.title}</Text>
-                    <Text style={{alignSelf:'flex-end',color:Colors.white_fff}}>{index+1}/{length}</Text>
-                </View>
-            </ImageBackground>
+                    <View style={{flexDirection:'row',backgroundColor:Colors.drawer,padding:8}}>
+                        <Text style={{flex:1,color:Colors.white_fff}}>{image.title}</Text>
+                        <Text style={{alignSelf:'flex-end',color:Colors.white_fff}}>{index+1}/{length}</Text>
+                    </View>
+                </ImageBackground>
+            </TouchableHighlight>
         )
     }
 

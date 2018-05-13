@@ -8,6 +8,7 @@ import { NavigationTypes } from '../redux/NavigationRedux'
 import { AppTypes } from '../redux/AppRedux'
 import { UserTypes } from '../redux/UserRedux'
 import { HomeTypes, success } from '../redux/HomeRedux'
+import { SearchTypes } from '../redux/SearchRedux'
 
 /* ------------- Sagas ------------- */
 import { startup } from './StartupSagas'
@@ -15,6 +16,7 @@ import { redirectFlow, resetFlow, rootFlow, sideFlow } from './NavigationSagas'
 import { appintro } from './AppSagas'
 import { sigin,signup} from './UserSagas'
 import { getHomeArticle} from './HomeSagas'
+import { search} from './SearchSagas'
 
 
 const api = API.create()
@@ -39,5 +41,7 @@ export default function * root () {
 
         //获取首页的文章信息
         takeLatest(HomeTypes.READ_HOME_ARTICLES, getHomeArticle, api),
+
+        takeLatest(SearchTypes.SEARCH, search, api),
     ])
 }

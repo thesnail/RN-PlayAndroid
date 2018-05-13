@@ -20,7 +20,7 @@ class Splash extends React.PureComponent{
               height: null, //必须为null
             }}>
             <View style={{height:38}}>
-              <Text style={{fontSize:8,color:'#FFF'}}>©2018 猎搜工作室. All rights reserved.</Text>
+              <Text style={{fontSize:12,color:'#FFF'}}>©2018 Scott's 工作室😄. All rights reserved.</Text>
             </View>
           </ImageBackground>)
     }

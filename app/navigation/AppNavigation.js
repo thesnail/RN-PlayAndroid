@@ -24,6 +24,7 @@ import Me from '../screens/Me'
 import Search from '../screens/Search'
 import Message from '../screens/Message'
 import Scan from '../screens/Scan'
+import WebViewSceen from '../screens/WebViewSceen'
 
 
 import HomeHeader from '../view/HomeHeader'
@@ -88,7 +89,7 @@ const Tap = TabNavigator({
           titleStyle:{
             textColor:'#DDA'
           },
-          header:<SquareHeader/>,
+          //header:<SquareHeader/>,
           tabBarLabel:'广场',
           tabBarIcon: ({ tintColor, focused }) => (  
             <Image resizeMode='contain'  
@@ -198,7 +199,16 @@ export const AppNavigation = StackNavigator({
         navigationOptions:{
             title:'Scan',
             headerStyle:{
-                backgroundColor:Colors.transparent
+                backgroundColor:Colors.header_bg
+            }
+        }
+    },
+    WebViewSceen:{
+        screen:WebViewSceen,
+        navigationOptions:{
+            title:'WebView',
+            headerStyle:{
+                backgroundColor:Colors.header_bg
             }
         }
     }
