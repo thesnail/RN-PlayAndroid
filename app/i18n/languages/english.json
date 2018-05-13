@@ -1,0 +1,9 @@
+{
+  "@@NAME": "English",
+  "signIn":"Sign In",
+  "logOut": "Log Out",
+  "signUp":"Sign Up",
+  "incorrect":"username or password incorrect.",
+  "home":"Home",
+  "@@ForgetPassword":"Forget Password?"
+}

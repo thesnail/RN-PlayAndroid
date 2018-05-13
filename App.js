@@ -1,52 +1,34 @@
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ * author: Scott Wang
+ */
+import './app/config'
+import DebugConfig from './app/config/DebugConfig'
+import React, { PureComponent } from 'react'
+import { Provider } from 'react-redux'
+import RootContainer from './RootContainer'
+import createStore from './app/redux'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Root from './app/Root'
 
+// create our store
+const store = createStore()
 
-export default class App extends Componen {
+class App extends PureComponent{
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      <Provider store={store}>
+        <Root>
+          <RootContainer />
+        </Root>
+      </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+// allow reactotron overlay for fast design in dev mode
+export default DebugConfig.useReactotron
+  ? console.tron.overlay(App)
+  : App

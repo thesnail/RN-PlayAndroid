@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React from 'react'
+import {View,Text} from 'react-native'
+import { connect } from 'react-redux'
+import Avatar from 'react-native-badge-avatar'
 
-export default class Me extends Componen {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>
-            Me
-            收藏/登陆
-        </Text>
-      </View>
-    );
-  }
+class Me extends React.PureComponent{
+    render () {
+        return (
+        <View style={{flex:1}}>
+           <Avatar 
+            size={68}
+            name="Dean Guo"
+            style={{ margin: 6 }}
+            placeholder={require('../themes/img/icon_voice.png')}
+            source="https://avatars3.githubusercontent.com/u/8385255?s=460&v=4"
+            onPress={() => alert("click")}/>
+        </View>)
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
+
+const mapDispatchToProps = dispatch => ({
+    
+})
+
+
+const mapStateToProps = (state) => {
+    console.log('----------------->    Me    <------------------')
+    console.log(state)
+    return {
+        error: null
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Me)
