@@ -1,20 +1,52 @@
 import React from 'react'
-import {View,Text} from 'react-native'
+import {View,Text,ScrollView} from 'react-native'
 import { connect } from 'react-redux'
-import Avatar from 'react-native-badge-avatar'
+import HeaderView from '../view/HeaderView'
+
+import SettingCell from '../view/SettingCell'
 
 class Me extends React.PureComponent{
     render () {
+        const {navigate} = this.props.navigation;
         return (
-        <View style={{flex:1}}>
-           <Avatar 
-            size={68}
-            name="Dean Guo"
-            style={{ margin: 6 }}
-            placeholder={require('../themes/img/icon_voice.png')}
-            source="https://avatars3.githubusercontent.com/u/8385255?s=460&v=4"
-            onPress={() => alert("click")}/>
-        </View>)
+            <ScrollView style={{flex:1}}>
+                <HeaderView
+                    //username={'Scott'}
+                    signature={'这是是签名...'}/>
+
+                <SettingCell
+                    title="收藏"
+                    style={{marginTop:10}}
+                    onPressCallback={()=>{
+                            navigate('Aboutus');
+                    }}/>
+
+                <SettingCell
+                    title="分享好友"
+                    onPressCallback={()=>{
+                            navigate('Aboutus');
+                    }}/>
+
+                <SettingCell
+                    title="清除缓存"
+                    onPressCallback={()=>{
+                            navigate('Aboutus');
+                    }}/>
+
+                <SettingCell
+                    title="关于我们"
+                    onPressCallback={()=>{
+                            navigate('Aboutus');
+                    }}/>
+
+                <SettingCell
+                    title="退出登陆"
+                    onPressCallback={()=>{
+                            navigate('Aboutus');
+                    }}/>
+
+                
+            </ScrollView>)
     }
 }
 

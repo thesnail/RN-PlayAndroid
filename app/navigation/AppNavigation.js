@@ -26,6 +26,7 @@ import Message from '../screens/Message'
 import Scan from '../screens/Scan'
 import WebViewSceen from '../screens/WebViewSceen'
 
+import Aboutus from '../screens/Aboutus'
 
 import HomeHeader from '../view/HomeHeader'
 import SquareHeader from '../view/SquareHeader'
@@ -207,6 +208,15 @@ export const AppNavigation = StackNavigator({
         screen:WebViewSceen,
         navigationOptions:{
             title:'WebView',
+            headerStyle:{
+                backgroundColor:Colors.header_bg
+            }
+        }
+    },
+    Aboutus:{
+        screen:Aboutus,
+        navigationOptions:{
+            title:'关于我们',
             headerStyle:{
                 backgroundColor:Colors.header_bg
             }

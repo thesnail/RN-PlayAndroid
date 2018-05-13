@@ -7,7 +7,9 @@ const images = {
     icon_voice:require('./img/icon_voice.png'),
     icon_search:require('./img/icon_search.png'),
     icon_qr:require('./img/icon_qr.png'),
-    icon_message:require('./img/icon_message.png')
+    icon_message:require('./img/icon_message.png'),
+    img_default_avatar:require('./img/img_default_avatar.png'),
+    ic_my_right:require('./img/ic_my_right.png')
 }
 
 export default images
