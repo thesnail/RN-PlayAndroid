@@ -2,6 +2,7 @@ package com.app;
 
 import android.app.Application;
 
+import com.facebook.react.BuildConfig;
 import com.facebook.react.ReactApplication;
 import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactNativeHost;

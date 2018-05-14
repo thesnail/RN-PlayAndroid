@@ -7,7 +7,6 @@ import AppActions from '../redux/AppRedux'
 class Tutorial extends React.PureComponent{
     render () {
         return (
-        <View style={{flex:1,alignItems: 'center',justifyContent: 'center'}}>
             <Swiper 
             loop={false}
             dotColor='white'
@@ -26,8 +25,7 @@ class Tutorial extends React.PureComponent{
                         this.props.readedAppintro()
                     }}/>
                 </View>
-            </Swiper>
-        </View>)
+            </Swiper>)
     }
 }
 
