@@ -7,7 +7,6 @@ const isIphoneX = Platform.OS === 'ios' && height === 812 && width === 375
 const isIOS = Platform.OS === 'ios'
 const isAndroid = Platform.OS === 'android'
 
-// Used via Metrics.baseMargin
 const metrics = {
   marginHorizontal: 10,
   marginVertical: 10,

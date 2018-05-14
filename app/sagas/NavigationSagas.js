@@ -27,12 +27,6 @@ export function * redirectFlow () {
     yield put(redirectRoute(TUTORIAL_ROUTE_NAME))
   } else {
     yield put(redirectRoute(AUTHEN_ROUTE_NAME))
-    /*
-    const user = state.user
-    if(user.isLoggedIn){
-    }else{
-      yield put(redirectRoute(UNAUTHEN_ROUTE_NAME))
-    }*/
   }
 }
 

@@ -5,8 +5,7 @@ import { connect } from 'react-redux'
 
 class Project extends React.PureComponent{
     render () {
-        return (
-        <View style={{flex:1,alignItems: 'center',justifyContent: 'center'}}>
+        return (<View style={{flex:1,alignItems: 'center',justifyContent: 'center'}}>
             <Text>项目</Text>
         </View>)
     }

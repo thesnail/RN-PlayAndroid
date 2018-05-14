@@ -5,7 +5,9 @@ import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
 import sagaPlugin from 'reactotron-redux-saga'
 
 if (Config.useReactotron) {
-  // https://github.com/infinitered/reactotron for more options!
+  {/*
+    https://github.com/infinitered/reactotron for more options!
+  */}
   Reactotron
     .configure({ name: 'OS App', host: 'localhost' })
     .useReactNative()
@@ -13,7 +15,10 @@ if (Config.useReactotron) {
     .use(sagaPlugin())
     .connect()
 
-  // Let's clear Reactotron on every time we load the app
+
+    {/*
+      Let's clear Reactotron on every time we load the app
+    */}
   Reactotron.clear()
 
   // Totally hacky, but this allows you to not both importing reactotron-react-native

@@ -6,8 +6,7 @@ import {Colors} from '../themes'
 
 class Scan extends React.PureComponent{
     render () {
-        return (
-        <View style={{flex:1,backgroundColor:Colors.transparent}}>
+        return (<View style={{flex:1,backgroundColor:Colors.transparent}}>
            <QRScannerView onRead={this.onRead}/>
         </View>)
     }

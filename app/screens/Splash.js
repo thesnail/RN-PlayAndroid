@@ -8,8 +8,7 @@ import {Images} from '../themes'
 class Splash extends React.PureComponent{
 
     render () {
-        return (
-            <ImageBackground
+        return (<ImageBackground
             source={Images.Splash}
             style={{
               flex:1,

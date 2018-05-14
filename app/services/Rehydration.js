@@ -11,7 +11,6 @@ const updateReducers = (store: Object) => {
 
   // Check to ensure latest reducer version
   AsyncStorage.getItem('reducerVersion').then((localVersion) => {
-    console.log('---------------------------------------------->')
 
     console.log(localVersion+'    '+localVersion)
 

@@ -30,26 +30,25 @@ const ISIPHONEX = Dimensions.get('window').width==375 && Dimensions.get('window'
 
 const styles = StyleSheet.create({  
     container: {  
-        flexDirection: 'row',   // 水平排布
+        flexDirection: 'row', 
         paddingTop: ISIPHONEX ? 44:22,
         paddingLeft: 10, 
-        paddingRight: 10,  
-        //paddingTop: Platform.OS === 'ios' ? 4 : 0,  // 处理iOS状态栏  
-        height: Platform.OS === 'ios' ? (ISIPHONEX ? 44 + 44 : 44 + 22): 48,   // 处理iOS状态栏  
+        paddingRight: 10, 
+        height: Platform.OS === 'ios' ? (ISIPHONEX ? 44 + 44 : 44 + 22): 48,  
         backgroundColor: Colors.header_bg,  
-        alignItems: 'center',  // 使元素垂直居中排布, 当flexDirection为column时, 为水平居中  
+        alignItems: 'center',
         justifyContent: 'center'
     },  
     logo: {  
         height: 24,  
         width: 64,  
-        resizeMode: 'stretch'  // 设置拉伸模式  
+        resizeMode: 'stretch'
     },  
     searchBox: {  
         height: 30,  
         flexDirection: 'row',  
-        flex: 1,  // 类似于android中的layout_weight,设置为1即自动拉伸填充  
-        borderRadius: 5,  // 设置圆角边  
+        flex: 1,
+        borderRadius: 5,
         backgroundColor: 'white',  
         alignItems: 'center',  
         marginLeft: 8,  

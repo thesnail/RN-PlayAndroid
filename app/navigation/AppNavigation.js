@@ -90,7 +90,6 @@ const Tap = TabNavigator({
           titleStyle:{
             textColor:'#DDA'
           },
-          //header:<SquareHeader/>,
           tabBarLabel:'广场',
           tabBarIcon: ({ tintColor, focused }) => (  
             <Image resizeMode='contain'  
@@ -117,7 +116,7 @@ const Tap = TabNavigator({
     }
 },{
     tabBarOptions: {
-      //activeTintColor: '#1296db',
+      activeTintColor: '#1296db',
       inactiveTintColor: 'gray',
     },
     tabBarComponent: TabBarBottom,
@@ -228,8 +227,8 @@ export const AppNavigation = StackNavigator({
     transitionConfig: () => ({
         screenInterpolator: CardStackStyleInterpolator.forHorizontal
     }),
-    onTransitionStart: ()=>{ console.log('导航栏切换开始'); },  // 回调
-    onTransitionEnd: ()=>{ console.log('导航栏切换结束'); },  // 回调
+    onTransitionStart: ()=>{ console.log('导航栏切换开始'); },
+    onTransitionEnd: ()=>{ console.log('导航栏切换结束'); },
     navigationOptions:{
       headerStyle:{
         backgroundColor:Colors.header_bg
@@ -239,18 +238,14 @@ export const AppNavigation = StackNavigator({
     }
 })
 
-// handler
+
 const defaultGetStateForAction = AppNavigation.router.getStateForAction
   AppNavigation.router.getStateForAction = (action, state) => {
     const { type, routeName } = action
-  
-    // jump twice
     if (state &&
       type === NavigationActions.NAVIGATE &&
       routeName === state.routes[state.routes.length - 1].routeName
     ) return null
-  
-    // back to one stack
     if (state && type === NavigationActions.BACK) {
       const backRoute = state.routes.find(route => route.routeName === action.key)
       if (backRoute) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text,FlatList,TouchableOpacity} from 'react-native'
+import {View,Text,FlatList,TouchableOpacity,Dimensions} from 'react-native'
 import { connect } from 'react-redux'
 import {Colors,Images} from '../themes'
 import Banner from '../view/Banner'
@@ -16,9 +16,8 @@ class Main extends React.PureComponent{
 
     _renderItem = ({item,index}) => {
         const {navigate} = this.props.navigation;
-
         return (
-          <TouchableOpacity activeOpacity={0.9} style={{padding:10}}
+          <TouchableOpacity activeOpacity={0.9} style={{padding:10,flex:1}}
           onPress={()=>{
             navigate('WebViewSceen',item)
           }}>
@@ -44,19 +43,23 @@ class Main extends React.PureComponent{
           </TouchableOpacity>
         );
     }
-//ListHeaderComponent={this._header}
     render () {
         const {articles,banners}= this.props
-        return (
-        <FlatList
+        return (<FlatList
             ref={(flatList)=>this._flatList = flatList}
             data={articles.datas == null ? []:articles.datas}
             keyExtractor={(item, index) => index.toString()}
-            ListFooterComponent={this._footer}
+            ListEmptyComponent={this.emptyComponent}
             ListHeaderComponent={() => this._header(banners)}
             ItemSeparatorComponent={this._separator}
-            renderItem={this._renderItem}
-        />)
+            renderItem={this._renderItem}/>)
+    }
+
+
+    emptyComponent = () => {
+        return <View style={{alignItems:'center',justifyContent:'center',backgroundColor:Colors.LightGrey}}>
+            <Text>数据为空</Text>
+        </View>;
     }
 
     _separator = () => {
@@ -73,7 +76,7 @@ class Main extends React.PureComponent{
     }
 
     _footer = () => {
-        return <View style={{marginTop:20,marginBottom:20,alignItems:'center',justifyContent:'center'}}>
+        return <View style={{width:Dimensions.get('window').width,marginTop:20,marginBottom:20,height:80,alignItems:'center',justifyContent:'center'}}>
             <Text style={{fontSize:12}}>--- 我们也是有底线的 ---</Text>;
         </View>
     }

@@ -8,17 +8,14 @@ class WebViewSceen extends React.PureComponent{
         const {link} = this.props.navigation.state.params
 
         console.log(link)
-        return (
-        <View style={{flex:1}}>
-           <WebView
-                automaticallyAdjustContentInsets={false}
-                source={{ uri:link}}
-                javaScriptEnabled={true}
-                domStorageEnabled={true}
-                decelerationRate="normal"
-                startInLoadingState={true}
-                scalesPageToFit={true}/>
-        </View>)
+        return (<WebView
+            automaticallyAdjustContentInsets={false}
+            source={{ uri:link}}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            decelerationRate="normal"
+            startInLoadingState={true}
+            scalesPageToFit={true}/>)
     }
 }
 

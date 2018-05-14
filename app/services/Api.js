@@ -20,7 +20,6 @@ const create = (
       'Content-Type': 'application/json'
     }
   })
-  //headers: {'Accept': 'application/vnd.github.v3+json'}
   //用户登录
   const userLogin = (params) => bmob.get('/login',params);
   //用户注册

@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 
 class Message extends React.PureComponent{
     render () {
-        return (
-        <View style={{flex:1,alignItems: 'center',justifyContent: 'center'}}>
+        return (<View style={{flex:1,alignItems: 'center',justifyContent: 'center'}}>
             <Text>Message界面</Text>
         </View>)
     }

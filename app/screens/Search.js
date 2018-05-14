@@ -6,22 +6,12 @@ import SearchActions from '../redux/SearchRedux'
 
 class Search extends React.PureComponent{
     render () {
-        let types = [
-            'A', 
-            'B', 
-            'C', 
-            'D', 
-            'E', 
-            'D', 
-            'C', 'G']
-        
-        return (
-        <View>
+        let types = ['A','B','C','D','E','D','C','G']
+        return (<View style={{flex:1}}>
             <View style={{flexDirection:'row',flexWrap: 'wrap',marginTop:10}}>
                 {types.map((title,index) => (
                     <TouchableOpacity key={index}
                     onPress = {()=>{
-                        //console.log(title)
                         this.props.search({'k':title})
                     }}
                     style={{
@@ -33,7 +23,6 @@ class Search extends React.PureComponent{
                     </TouchableOpacity>
                 ))}
             </View>
-
         </View>)
     }
 }

@@ -10,8 +10,7 @@ import UserActions from '../redux/UserRedux'
 class Me extends React.PureComponent{
     render () {
         const {user,navigation,logOut}= this.props
-        return (
-            <ScrollView style={{flex:1}}>
+        return (<View style={{flex:1}}>
                 <HeaderView
                     username={user.info.name}
                     onPressCallback={(status)=>{
@@ -53,9 +52,7 @@ class Me extends React.PureComponent{
                                logOut()
                         }}/> : null
                     }
-
-                
-            </ScrollView>)
+            </View>)
     }
 }
 

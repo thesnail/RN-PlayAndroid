@@ -8,7 +8,6 @@ export default class Banner extends React.PureComponent{
     constructor(props) {
         super(props);
     }
-
     _renderPage(image, index,length) {
         return (
             <TouchableHighlight
@@ -38,7 +37,7 @@ export default class Banner extends React.PureComponent{
             showsPagination={false}
             dotColor={Colors.white_fff}
             activeDotColor={Colors.header_bg}>
-            {banners[0] ? banners.map((image, index) => this._renderPage(image, index,banners.length)) : <View>aaaa</View>}
+            {banners[0] ? banners.map((image, index) => this._renderPage(image, index,banners.length)) : <View style={{flex:1,backgroundColor:'#FFF'}}></View>}
             </Swiper>)
     }
 }

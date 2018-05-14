@@ -29,7 +29,7 @@ class Login extends React.PureComponent{
     render () {
         const {navigate} = this.props.navigation;
         return (
-        <SafeAreaView style={{paddingTop:20}}>
+        <View style={{paddingTop:20}}>
             <StatusBar
               backgroundColor={Colors.header_bg}
               barStyle="light-content"/>
@@ -83,7 +83,7 @@ class Login extends React.PureComponent{
             onPressCallback={()=>{
               navigate('Signup');
             }}/>
-        </SafeAreaView>)
+        </View>)
     }
 }
 

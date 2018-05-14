@@ -7,12 +7,6 @@ class System extends React.PureComponent{
     constructor(props) {
         super(props);
     }
-
-    componentDidMount () {
-        
-    }
-
-
     _renderSectionHeader = (info, index) => {
         return(
             <View>
@@ -35,12 +29,9 @@ class System extends React.PureComponent{
     
     render () {
         const sections =  this.props.system
-        return (<View/>
-           /* <SectionList
-                renderSectionHeader={this._renderSectionHeader}
-                renderItem={this._renderItem}
-                sections={sections}
-        ItemSeparatorComponent={this._separator}/>*/)
+        return (<View style={{flex:1}}>
+            <Text>System</Text>
+        </View>)
     }
 }
 
