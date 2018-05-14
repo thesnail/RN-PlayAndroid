@@ -26,6 +26,11 @@
 ```
 
 ## 三、项目截图
+### Android效果展示
+图片有点大、建议下载之后查看
+![android-1.gif](/screenshots/android-1.gif)
+
+### iOS效果展示
 #### 1. 安装之后第一次打开,进入教程页
 ![1.gif](/screenshots/1.gif)
 ![1-1.gif](/screenshots/1-1.gif)
@@ -34,3 +39,7 @@
 #### 2. 再次打开将进入主界面
 ![2.gif](/screenshots/2.gif)
 ![2-1.gif](/screenshots/2-1.gif)
+
+
+## 四、Android启动界面优化技巧
+[Android启动界面优化技巧-Splash Screens的正确方式](https://www.jianshu.com/p/cea2864bb587)
