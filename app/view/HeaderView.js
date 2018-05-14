@@ -24,6 +24,7 @@ class HeaderView extends Component {
         return(
             <TouchableOpacity
                 activeOpacity={0.75}
+                onPress={()=>this.props.onPressCallback(this.props.username == null ?true:false)}
                 style={{
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -49,7 +50,6 @@ class HeaderView extends Component {
                         <Text style={{
                             paddingVertical: 5,
                             paddingHorizontal: 20,
-                            //color: 'white',
                             fontSize: 10
                         }}>
                             {this.props.signature}

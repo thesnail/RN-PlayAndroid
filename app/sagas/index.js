@@ -14,7 +14,7 @@ import { SearchTypes } from '../redux/SearchRedux'
 import { startup } from './StartupSagas'
 import { redirectFlow, resetFlow, rootFlow, sideFlow } from './NavigationSagas'
 import { appintro } from './AppSagas'
-import { sigin,signup} from './UserSagas'
+import { sigin,signup,logout} from './UserSagas'
 import { getHomeArticle} from './HomeSagas'
 import { search} from './SearchSagas'
 
@@ -38,6 +38,8 @@ export default function * root () {
         takeLatest(UserTypes.SIGNIN_REQUEST, sigin, api),
         //用户注册
         takeLatest(UserTypes.SIGNUP_REQUEST, signup, api),
+        //用户退出登陆
+        takeLatest(UserTypes.LOGOUT, logout, api),
 
         //获取首页的文章信息
         takeLatest(HomeTypes.READ_HOME_ARTICLES, getHomeArticle, api),

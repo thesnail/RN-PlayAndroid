@@ -8,6 +8,8 @@ const { Types, Creators } = createActions({
   signupRequest: ['params'],
   signinFailure: ['info'],
   signinSuccess: ['info'],
+  logout:null,
+  logoutSuccess: null,
 })
 
 export const UserTypes = Types
@@ -40,11 +42,14 @@ export const signinSuccess = (state, { info }) => {
   return state.merge({ fetching: false, isLoggedIn: true, info })
 }
 
+export const logoutSuccess = state => INITIAL_STATE
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.SIGNIN_REQUEST]: signinRequest,
   [Types.SIGNUP_REQUEST]: signupRequest,
   [Types.SIGNIN_SUCCESS]: signinSuccess,
-  [Types.SIGNIN_FAILURE]: signinFailure
+  [Types.SIGNIN_FAILURE]: signinFailure,
+  [Types.LOGOUT_SUCCESS]: logoutSuccess,
 })
